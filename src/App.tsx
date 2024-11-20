@@ -1,10 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Navigate } from 'react-router-dom'
+import Home from './pages/Home'
 
 const routes = [
   {
     path: '/',
-    element: <h1>Home</h1>
+    element: <Home />
   },
   {
     path: '/people',

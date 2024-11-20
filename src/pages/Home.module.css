@@ -1,0 +1,54 @@
+.container {
+  box-sizing: border-box;
+  padding: 2rem;
+  text-align: center;
+  width: 100vw;
+
+  .title {
+    font-size: 2.25rem;
+    font-weight: bold;
+    color: #f59e0b;
+    margin-bottom: 2rem;
+  }
+
+  .categories {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card {
+      background-color: rgba(31, 41, 55, 0.5);
+      padding: 2rem;
+      border-radius: 0.5rem;
+      border: 1px solid #374151;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover {
+        border-color: #f59e0b;
+      }
+
+      .icon {
+        width: 3rem;
+        height: 3rem;
+        margin: 0 auto 1rem;
+        color: #f59e0b;
+      }
+
+      .cardTitle {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+
+      .description {
+        color: #9ca3af;
+      }
+    }
+  }
+}
