@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import { LuUsers, LuGlobe2, LuRocket } from 'react-icons/lu'
 import { motion } from 'framer-motion'
 import styles from './Home.module.css'
+import { SearchBar } from '../components/SearchBar'
 
 const categories = [
   {
@@ -45,6 +46,9 @@ export const Home = () => {
       >
         Welcome to Manosos Star Wars Portal
       </motion.h1>
+
+      <SearchBar />
+
       <div className={styles.categories}>
         {categories.map((category, index) => (
           <motion.div
