@@ -1,5 +1,13 @@
-export interface Person {
+interface BaseEntity {
+  created: Date
+  edited: Date
+  films: string[]
+  id?: string
   name: string
+  url: string
+}
+
+export interface Person extends BaseEntity {
   height: string
   mass: string
   hair_color: string
@@ -8,17 +16,12 @@ export interface Person {
   birth_year: string
   gender: string
   homeworld: string
-  films: string[]
   species: string[]
   vehicles: string[]
   starships: string[]
-  created: Date
-  edited: Date
-  url: string
 }
 
-export interface Planet {
-  name: string
+export interface Planet extends BaseEntity {
   rotation_period: string
   orbital_period: string
   diameter: string
@@ -28,14 +31,9 @@ export interface Planet {
   surface_water: string
   population: string
   residents: string[]
-  films: string[]
-  created: Date
-  edited: Date
-  url: string
 }
 
-export interface Starship {
-  name: string
+export interface Starship extends BaseEntity {
   model: string
   manufacturer: string
   cost_in_credits: string
@@ -49,10 +47,6 @@ export interface Starship {
   MGLT: string
   starship_class: string
   pilots: string[]
-  films: string[]
-  created: Date
-  edited: Date
-  url: string
 }
 
 export interface APIResponse<T> {
