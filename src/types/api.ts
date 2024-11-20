@@ -8,6 +8,12 @@ export interface Person {
   birth_year: string
   gender: string
   homeworld: string
+  films: string[]
+  species: string[]
+  vehicles: string[]
+  starships: string[]
+  created: Date
+  edited: Date
   url: string
 }
 
@@ -22,6 +28,9 @@ export interface Planet {
   surface_water: string
   population: string
   residents: string[]
+  films: string[]
+  created: Date
+  edited: Date
   url: string
 }
 
@@ -39,6 +48,10 @@ export interface Starship {
   hyperdrive_rating: string
   MGLT: string
   starship_class: string
+  pilots: string[]
+  films: string[]
+  created: Date
+  edited: Date
   url: string
 }
 
