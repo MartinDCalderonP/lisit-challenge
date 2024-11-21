@@ -2,6 +2,7 @@ import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
 import Home from './pages/Home'
 import People from './pages/People'
+import Planets from './pages/Planets'
 
 const routes = [
   {
@@ -18,7 +19,7 @@ const routes = [
   },
   {
     path: '/planets',
-    element: <h1>Planets</h1>
+    element: <Planets />
   },
   {
     path: '/planets/:id',
