@@ -13,7 +13,7 @@ export const Detail = () => {
   const endpoint = pathname.split('/')[1]
   const { id = '' } = useParams<{ id: string }>()
 
-  const { result, loading, error } = useGetEntityById({
+  const { data, loading, error } = useGetEntityById({
     endpoint,
     id
   })
@@ -35,30 +35,30 @@ export const Detail = () => {
       {loading && <Loader />}
       {error && <p className={styles.error}>{error}</p>}
 
-      {!result && !loading && !error && (
+      {!data && !loading && !error && (
         <p className={styles.error}>No data found.</p>
       )}
 
-      {result && !loading && (
+      {data && !loading && (
         <>
-          <h1 className={styles.title}>{result.name}</h1>
+          <h1 className={styles.title}>{data.name}</h1>
 
           <div className={styles.card}>
-            {isPersonItem(result) && (
+            {isPersonItem(data) && (
               <PersonDetail
-                person={result}
+                person={data}
                 handleSectionButtonClick={handleSectionButtonClick}
               />
             )}
-            {isPlanetItem(result) && (
+            {isPlanetItem(data) && (
               <PlanetDetail
-                planet={result}
+                planet={data}
                 handleSectionButtonClick={handleSectionButtonClick}
               />
             )}
-            {isStarshipItem(result) && (
+            {isStarshipItem(data) && (
               <StarshipDetail
-                starship={result}
+                starship={data}
                 handleSectionButtonClick={handleSectionButtonClick}
               />
             )}

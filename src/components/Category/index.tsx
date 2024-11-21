@@ -24,7 +24,7 @@ export const Category = ({ endpoint, title }: CategoryProps) => {
 
   const [page, setPage] = useState(1)
 
-  const { results, loading, totalPages, error } = useGetEntities({
+  const { data, loading, totalPages, error } = useGetEntities({
     endpoint,
     page
   })
@@ -44,14 +44,14 @@ export const Category = ({ endpoint, title }: CategoryProps) => {
       {loading && <Loader />}
       {error && <p className={styles.error}>{error}</p>}
 
-      {results.length === 0 && !loading && !error && (
+      {data.length === 0 && !loading && !error && (
         <p className={styles.error}>No data found.</p>
       )}
 
-      {results.length > 0 && (
+      {data.length > 0 && (
         <>
           <div className={styles.cardsContainer}>
-            {results.map((item: Entity) => (
+            {data.map((item: Entity) => (
               <Card
                 key={item.url}
                 onClick={() => handleCardClick(item)}

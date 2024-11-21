@@ -13,7 +13,7 @@ const useGetEntities = ({
   page = 1,
   search = ''
 }: UseGetEntitiesProps) => {
-  const [results, setResults] = useState<Entity[]>([])
+  const [data, setData] = useState<Entity[]>([])
   const [loading, setLoading] = useState(true)
   const [totalPages, setTotalPages] = useState(1)
   const [error, setError] = useState('')
@@ -24,7 +24,7 @@ const useGetEntities = ({
 
       try {
         const response = await getEntities(endpoint, page, search)
-        setResults(response.data.results)
+        setData(response.data.results)
         setTotalPages(Math.ceil(response.data.count / 10))
       } catch (error) {
         console.error('Error fetching:', error)
@@ -38,7 +38,7 @@ const useGetEntities = ({
     return () => clearTimeout(debounce)
   }, [endpoint, page, search])
 
-  return { results, loading, totalPages, error }
+  return { data, loading, totalPages, error }
 }
 
 export default useGetEntities
