@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Navigate } from 'react-router-dom'
 import Home from './pages/Home'
+import People from './pages/People'
 
 const routes = [
   {
@@ -9,7 +10,7 @@ const routes = [
   },
   {
     path: '/people',
-    element: <h1>People</h1>
+    element: <People />
   },
   {
     path: '/people/:id',
