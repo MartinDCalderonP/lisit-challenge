@@ -1,0 +1,24 @@
+.personCard {
+  background-color: rgba(31, 41, 55, 0.5);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #374151;
+  cursor: pointer;
+  transition: border-color 0.3s;
+
+  &:hover {
+    border-color: #f59e0b;
+  }
+
+  .name {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #f3f4f6;
+    margin-bottom: 0.5rem;
+  }
+
+  .birthYear {
+    font-size: 1rem;
+    color: #9ca3af;
+  }
+}
