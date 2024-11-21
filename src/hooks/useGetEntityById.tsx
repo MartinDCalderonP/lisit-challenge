@@ -31,7 +31,7 @@ const useGetEntityById = ({ endpoint, id }: UseGetEntityByIdProps) => {
     return () => clearTimeout(debounce)
   }, [endpoint, id])
 
-  return { results: result, loading, error }
+  return { result, loading, error }
 }
 
 export default useGetEntityById
