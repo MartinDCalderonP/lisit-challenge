@@ -13,11 +13,17 @@ export const Pagination = ({
   totalPages,
   onPageChange
 }: PaginationProps) => {
+  const handlePageChange = (page: number) => {
+    if (page < 1 || page > totalPages) return
+    onPageChange(page)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
       <div className={styles.container}>
         <button
-          onClick={() => onPageChange(currentPage - 1)}
+          onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
           className={styles.button}
         >
@@ -27,7 +33,7 @@ export const Pagination = ({
           {currentPage} / {totalPages}
         </span>
         <button
-          onClick={() => onPageChange(currentPage + 1)}
+          onClick={() => handlePageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
           className={styles.button}
         >
