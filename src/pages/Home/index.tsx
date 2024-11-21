@@ -44,7 +44,7 @@ export const Home = () => {
         animate={animateOpacity}
         className={styles.title}
       >
-        Manosos Star Wars
+        Star Wars
       </motion.h1>
 
       <SearchBar />
