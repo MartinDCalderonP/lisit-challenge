@@ -40,7 +40,7 @@ export const getEntities = async <T extends Entity>(
     data: {
       count: serializedData.count,
       next: serializedData.next,
-      previous: page > 1 ? 'prev' : null,
+      previous: serializedData.previous,
       results: serializedData.results.filter((item) =>
         matchesSearch(item, search)
       )
