@@ -39,7 +39,7 @@ export const Detail = () => {
         <p className={styles.error}>No data found.</p>
       )}
 
-      {result && (
+      {result && !loading && (
         <>
           <h1 className={styles.title}>{result.name}</h1>
 
