@@ -1,4 +1,4 @@
-import { Planet } from '../../../types/api'
+import { Planet } from '../../types/api'
 import { motion } from 'framer-motion'
 
 interface PlanetDetailProps {

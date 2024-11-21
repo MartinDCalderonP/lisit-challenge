@@ -4,7 +4,7 @@ import Home from './pages/Home'
 import People from './pages/People'
 import Planets from './pages/Planets'
 import Starships from './pages/Starships'
-import Detail from './components/Detail'
+import Detail from './pages/Detail'
 
 const routes = [
   {

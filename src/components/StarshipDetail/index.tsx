@@ -1,4 +1,4 @@
-import { Starship } from '../../../types/api'
+import { Starship } from '../../types/api'
 import { motion } from 'framer-motion'
 
 interface StarshipDetailsProps {

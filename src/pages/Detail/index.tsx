@@ -1,12 +1,12 @@
 import { useNavigate, useParams } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import useGetEntityById from '../../hooks/useGetEntityById'
-import Loader from '../Loader'
+import Loader from '../../components/Loader'
 import { isPersonItem, isPlanetItem, isStarshipItem } from '../../utils'
-import PersonDetail from './PersonDetail'
+import PersonDetail from '../../components/PersonDetail'
 import styles from './styles.module.css'
-import PlanetDetail from './PlanetDetail'
-import StarshipDetail from './StarshipDetail'
+import PlanetDetail from '../../components/PlanetDetail'
+import StarshipDetail from '../../components/StarshipDetail'
 
 export const Detail = () => {
   const { pathname } = window.location

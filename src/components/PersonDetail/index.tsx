@@ -1,5 +1,5 @@
-import { Person } from '../../../types/api'
-import { toMeters } from '../../../utils'
+import { Person } from '../../types/api'
+import { toMeters } from '../../utils'
 import { motion } from 'framer-motion'
 
 interface PersonDetailProps {
