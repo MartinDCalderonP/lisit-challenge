@@ -3,6 +3,7 @@ import Layout from './components/Layout'
 import Home from './pages/Home'
 import People from './pages/People'
 import Planets from './pages/Planets'
+import Starships from './pages/Starships'
 
 const routes = [
   {
@@ -27,7 +28,7 @@ const routes = [
   },
   {
     path: '/starships',
-    element: <h1>Starships</h1>
+    element: <Starships />
   },
   {
     path: '/starships/:id',
