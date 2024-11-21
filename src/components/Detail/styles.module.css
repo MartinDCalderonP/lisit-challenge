@@ -8,4 +8,45 @@
     color: #f59e0b;
     margin-bottom: 2rem;
   }
+
+  .card {
+    background-color: rgba(31, 41, 55, 0.5);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    border: 1px solid #374151;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+
+    section {
+      margin-bottom: 1rem;
+
+      h2 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        color: #9ca3af;
+      }
+
+      button {
+        text-align: left;
+        padding: 1rem;
+        background-color: rgba(55, 65, 81, 0.5);
+        border-radius: 0.5rem;
+        transition: background-color 0.3s;
+        margin: 0.5rem;
+
+        &:hover {
+          background-color: #374151;
+        }
+      }
+    }
+  }
 }

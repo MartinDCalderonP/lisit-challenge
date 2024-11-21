@@ -1,8 +1,9 @@
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import useGetEntityById from '../../hooks/useGetEntityById'
 import Loader from '../Loader'
 import { isPersonItem, isPlanetItem, isStarshipItem } from '../../utils'
+import PersonDetail from './PersonDetail'
 import styles from './styles.module.css'
 
 export const Detail = () => {
@@ -14,6 +15,14 @@ export const Detail = () => {
     endpoint,
     id
   })
+
+  const navigate = useNavigate()
+
+  const handleSectionButtonClick = (url: string) => {
+    const id = url.split('/').filter(Boolean).pop()
+    const endpoint = url.split('/')[4]
+    navigate(`/${endpoint}/${id}`)
+  }
 
   return (
     <motion.div
@@ -32,9 +41,16 @@ export const Detail = () => {
         <>
           <h1 className={styles.title}>{result.name}</h1>
 
-          {isPersonItem(result) && <div>is Person</div>}
-          {isPlanetItem(result) && <div>is Planet</div>}
-          {isStarshipItem(result) && <div>is Starship</div>}
+          <div className={styles.card}>
+            {isPersonItem(result) && (
+              <PersonDetail
+                person={result}
+                handleSectionButtonClick={handleSectionButtonClick}
+              />
+            )}
+            {isPlanetItem(result) && <div>is Planet</div>}
+            {isStarshipItem(result) && <div>is Starship</div>}
+          </div>
         </>
       )}
     </motion.div>
