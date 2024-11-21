@@ -12,9 +12,10 @@ import { isPersonItem, isPlanetItem, isStarshipItem } from '../../utils'
 interface CategoryProps {
   endpoint: string
   title: string
+  search?: string
 }
 
-export const Category = ({ endpoint, title }: CategoryProps) => {
+export const Category = ({ endpoint, title, search }: CategoryProps) => {
   const navigate = useNavigate()
 
   const handleCardClick = (item: Entity) => {
@@ -26,7 +27,8 @@ export const Category = ({ endpoint, title }: CategoryProps) => {
 
   const { data, loading, totalPages, error } = useGetEntities({
     endpoint,
-    page
+    page,
+    search
   })
 
   const currentSubtitle = (item: Entity) => {
