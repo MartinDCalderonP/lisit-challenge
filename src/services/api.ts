@@ -35,23 +35,18 @@ const getEntities = async <T extends Person | Planet | Starship>(
   page = 1,
   search = ''
 ) => {
-  const response = await api.get<APIResponse<T>>(endpoint)
+  const response = await api.get<APIResponse<T>>(endpoint + '?page=' + page)
   const serializedData = serializeResponse(response.data)
-
-  const filteredResults = serializedData.results.filter((item) =>
-    matchesSearch(item, search)
-  )
-
-  const startIndex = (page - 1) * 10
-  const paginatedResults = filteredResults.slice(startIndex, startIndex + 10)
 
   return {
     ...response,
     data: {
-      count: filteredResults.length,
-      next: startIndex + 10 < filteredResults.length ? 'next' : null,
+      count: serializedData.count,
+      next: serializedData.next,
       previous: page > 1 ? 'prev' : null,
-      results: paginatedResults
+      results: serializedData.results.filter((item) =>
+        matchesSearch(item, search)
+      )
     }
   }
 }
