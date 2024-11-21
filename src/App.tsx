@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import People from './pages/People'
 import Planets from './pages/Planets'
 import Starships from './pages/Starships'
+import Detail from './components/Detail'
 
 const routes = [
   {
@@ -16,7 +17,7 @@ const routes = [
   },
   {
     path: '/people/:id',
-    element: <h1>Person</h1>
+    element: <Detail />
   },
   {
     path: '/planets',
@@ -24,7 +25,7 @@ const routes = [
   },
   {
     path: '/planets/:id',
-    element: <h1>Planet</h1>
+    element: <Detail />
   },
   {
     path: '/starships',
@@ -32,7 +33,7 @@ const routes = [
   },
   {
     path: '/starships/:id',
-    element: <h1>Starship</h1>
+    element: <Detail />
   },
   {
     path: '*',
