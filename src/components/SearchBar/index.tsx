@@ -1,26 +1,34 @@
-import { ChangeEvent, useState } from 'react'
+import { ChangeEvent } from 'react'
 import { LuSearch } from 'react-icons/lu'
 import { motion } from 'framer-motion'
 import styles from './styles.module.css'
 
 const filterOptions = ['People', 'Planets', 'Starships']
 
-export const SearchBar = () => {
-  const [value, setValue] = useState('')
+interface SearchBarProps {
+  searchedValue: string
+  setSearchedValue: (value: string) => void
+  selectedFilter: string
+  setSelectedFilter: (filter: string) => void
+}
 
+export const SearchBar = ({
+  searchedValue,
+  setSearchedValue,
+  selectedFilter,
+  setSelectedFilter
+}: SearchBarProps) => {
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target
-    setValue(value)
+    setSearchedValue(value)
   }
-
-  const [selectedFilter, setSelectedFilter] = useState('people')
 
   const handleFilterButtonClick = (filter: string) => {
     setSelectedFilter(filter)
   }
 
   const handleSearchButtonClick = () => {
-    console.log('Search:', value)
+    console.log('Search:', searchedValue)
   }
 
   return (
@@ -32,7 +40,7 @@ export const SearchBar = () => {
       >
         <input
           type='text'
-          value={value}
+          value={searchedValue}
           onChange={handleInputChange}
           placeholder='Search across all fields...'
           className={styles.input}
@@ -56,6 +64,7 @@ export const SearchBar = () => {
             }`}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
+            animate={{ opacity: 1 }}
             onClick={() => handleFilterButtonClick(option)}
           >
             {option}
