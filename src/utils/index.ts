@@ -15,3 +15,5 @@ export const isStarshipItem = (item: Entity): item is Starship => {
     'name' in item && 'model' in item && 'manufacturer' in item && 'url' in item
   )
 }
+
+export const toMeters = (value: number) => (value / 100).toFixed(2)
