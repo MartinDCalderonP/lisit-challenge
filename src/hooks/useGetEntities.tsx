@@ -19,7 +19,7 @@ const useGetEntities = ({
   const [error, setError] = useState('')
 
   useEffect(() => {
-    const fetchPeople = async () => {
+    const fetch = async () => {
       setLoading(true)
 
       try {
@@ -34,7 +34,7 @@ const useGetEntities = ({
       setLoading(false)
     }
 
-    const debounce = setTimeout(fetchPeople, 300)
+    const debounce = setTimeout(fetch, 300)
     return () => clearTimeout(debounce)
   }, [endpoint, page, search])
 
