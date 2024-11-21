@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Entity } from '../types/api'
 import { getEntities } from '../services/api'
 
-interface useGetEntitiesProps {
+interface UseGetEntitiesProps {
   endpoint: string
   page?: number
   search?: string
@@ -12,7 +12,7 @@ const useGetEntities = ({
   endpoint,
   page = 1,
   search = ''
-}: useGetEntitiesProps) => {
+}: UseGetEntitiesProps) => {
   const [results, setResults] = useState<Entity[]>([])
   const [loading, setLoading] = useState(true)
   const [totalPages, setTotalPages] = useState(1)
