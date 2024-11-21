@@ -31,7 +31,8 @@ export const Category = ({ endpoint, title }: CategoryProps) => {
 
   const currentSubtitle = (item: Entity) => {
     if (isPersonItem(item)) return `Birth Year: ${item.birth_year}`
-    if (isPlanetItem(item)) return `Population: ${item.population}`
+    if (isPlanetItem(item))
+      return `Population: ${Number(item.population).toLocaleString('es-ES')}`
     if (isStarshipItem(item)) return `Class: ${item.starship_class}`
     return ''
   }
