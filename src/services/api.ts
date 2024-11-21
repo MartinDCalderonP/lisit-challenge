@@ -6,7 +6,7 @@ const api = axios.create({
 })
 
 export const extractId = (url: string): string =>
-  url.split('/').filter(Boolean).pop() || ''
+  url.split('/').filter(Boolean).pop() ?? ''
 
 const serializeResponse = <T>(response: APIResponse<T>): APIResponse<T> => ({
   count: response.count,
