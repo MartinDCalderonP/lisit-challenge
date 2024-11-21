@@ -17,8 +17,10 @@ interface CategoryProps {
 export const Category = ({ endpoint, title }: CategoryProps) => {
   const navigate = useNavigate()
 
-  const handleCardClick = (item: Entity) =>
-    navigate(`${endpoint}/${item.id ?? extractId(item.url)}`)
+  const handleCardClick = (item: Entity) => {
+    const cardUrl = `/${endpoint}/${item.id ?? extractId(item.url)}`
+    navigate(cardUrl)
+  }
 
   const [page, setPage] = useState(1)
 
