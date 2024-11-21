@@ -3,8 +3,6 @@
   display: flex;
   justify-content: center;
   margin: 2rem 0;
-  height: 75vh;
-  width: 100vw;
 
   .loader {
     animation: spin 1s linear infinite;
