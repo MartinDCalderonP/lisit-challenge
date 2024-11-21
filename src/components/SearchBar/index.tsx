@@ -1,7 +1,7 @@
 import { ChangeEvent, useState } from 'react'
 import { LuSearch } from 'react-icons/lu'
 import { motion } from 'framer-motion'
-import styles from './SearchBar.module.css'
+import styles from './styles.module.css'
 
 export const SearchBar = () => {
   const [value, setValue] = useState('')

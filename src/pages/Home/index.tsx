@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom'
 import { LuUsers, LuGlobe2, LuRocket } from 'react-icons/lu'
 import { motion } from 'framer-motion'
-import styles from './Home.module.css'
-import { SearchBar } from '../components/SearchBar'
+import styles from './styles.module.css'
+import { SearchBar } from '../../components/SearchBar'
 
 const categories = [
   {
