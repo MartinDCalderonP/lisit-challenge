@@ -6,6 +6,7 @@ import { isPersonItem, isPlanetItem, isStarshipItem } from '../../utils'
 import PersonDetail from './PersonDetail'
 import styles from './styles.module.css'
 import PlanetDetail from './PlanetDetail'
+import StarshipDetail from './StarshipDetail'
 
 export const Detail = () => {
   const { pathname } = window.location
@@ -55,7 +56,12 @@ export const Detail = () => {
                 handleSectionButtonClick={handleSectionButtonClick}
               />
             )}
-            {isStarshipItem(result) && <div>is Starship</div>}
+            {isStarshipItem(result) && (
+              <StarshipDetail
+                starship={result}
+                handleSectionButtonClick={handleSectionButtonClick}
+              />
+            )}
           </div>
         </>
       )}
