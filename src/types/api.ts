@@ -55,3 +55,5 @@ export interface APIResponse<T> {
   previous: string | null
   results: T[]
 }
+
+export type Entity = Person | Planet | Starship

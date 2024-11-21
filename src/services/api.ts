@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { APIResponse, Person, Planet, Starship } from '../types/api'
+import { APIResponse, Entity } from '../types/api'
 
 const api = axios.create({
   baseURL: 'https://swapi.dev/api'
@@ -14,14 +14,11 @@ const serializeResponse = <T>(response: APIResponse<T>): APIResponse<T> => ({
   previous: response.previous,
   results: response.results.map((item) => ({
     ...item,
-    id: extractId((item as Person | Planet | Starship).url)
+    id: extractId((item as Entity).url)
   }))
 })
 
-const matchesSearch = (
-  item: Person | Planet | Starship,
-  search: string
-): boolean => {
+const matchesSearch = (item: Entity, search: string): boolean => {
   if (!search) return true
   const searchLower = search.toLowerCase()
   return Object.values(item).some(
