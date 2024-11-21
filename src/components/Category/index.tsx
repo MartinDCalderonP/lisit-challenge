@@ -41,7 +41,7 @@ export const Category = ({ endpoint, title, search }: CategoryProps) => {
 
   return (
     <>
-      <h1 className={styles.title}>{title}</h1>
+      <h1 className={styles.title}>Star Wars {title}</h1>
 
       {loading && <Loader />}
       {error && <p className={styles.error}>{error}</p>}

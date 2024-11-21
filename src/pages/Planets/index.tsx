@@ -1,5 +1,5 @@
 import Category from '../../components/Category'
 
-const Planets = () => <Category endpoint='planets' title='Star Wars Planets' />
+const Planets = () => <Category endpoint='planets' title='Planets' />
 
 export default Planets
