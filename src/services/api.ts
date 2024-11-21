@@ -27,7 +27,7 @@ const matchesSearch = (item: Entity, search: string): boolean => {
   )
 }
 
-const getEntities = async <T extends Person | Planet | Starship>(
+export const getEntities = async <T extends Entity>(
   endpoint: string,
   page = 1,
   search = ''
@@ -48,21 +48,7 @@ const getEntities = async <T extends Person | Planet | Starship>(
   }
 }
 
-export const getPeople = (page = 1, search = '') =>
-  getEntities<Person>('/people/', page, search)
-
-export const getPlanets = (page = 1, search = '') =>
-  getEntities<Planet>('/planets/', page, search)
-
-export const getStarships = (page = 1, search = '') =>
-  getEntities<Starship>('/starships/', page, search)
-
-const getEntityById = async <T>(endpoint: string, id: string) => {
+export const getEntityById = async <T>(endpoint: string, id: string) => {
   const response = await api.get<T>(`${endpoint}/${id}`)
   return { ...response, data: { ...response.data, id } }
 }
-
-export const getPerson = (id: string) => getEntityById<Person>('/people', id)
-export const getPlanet = (id: string) => getEntityById<Planet>('/planets', id)
-export const getStarship = (id: string) =>
-  getEntityById<Starship>('/starships', id)
