@@ -1,3 +1,11 @@
+# How to run the project
+
+1. Clone the repository
+2. Run `npm install` to install the dependencies
+3. Run `npm run dev` to start the development server
+4. Open [http://localhost:3000](http://localhost:3000) in your browser or the URL provided by the terminal
+5. Enjoy!
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -19,9 +27,9 @@ export default tseslint.config({
     // other options...
     parserOptions: {
       project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
+      tsconfigRootDir: import.meta.dirname
+    }
+  }
 })
 ```
 
@@ -38,13 +46,13 @@ export default tseslint.config({
   settings: { react: { version: '18.3' } },
   plugins: {
     // Add the react plugin
-    react,
+    react
   },
   rules: {
     // other rules...
     // Enable its recommended rules
     ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
+    ...react.configs['jsx-runtime'].rules
+  }
 })
 ```
