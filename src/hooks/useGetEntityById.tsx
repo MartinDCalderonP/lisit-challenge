@@ -8,7 +8,7 @@ interface UseGetEntityByIdProps {
 }
 
 const useGetEntityById = ({ endpoint, id }: UseGetEntityByIdProps) => {
-  const [results, setResults] = useState<Entity>()
+  const [result, setResult] = useState<Entity>()
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
 
@@ -18,7 +18,7 @@ const useGetEntityById = ({ endpoint, id }: UseGetEntityByIdProps) => {
 
       try {
         const response = await getEntityById(endpoint, id)
-        setResults(response.data)
+        setResult(response.data)
       } catch (error) {
         console.error('Error fetching:', error)
         setError("Couldn't fetch data. Please try again later.")
@@ -31,7 +31,7 @@ const useGetEntityById = ({ endpoint, id }: UseGetEntityByIdProps) => {
     return () => clearTimeout(debounce)
   }, [endpoint, id])
 
-  return { results, loading, error }
+  return { results: result, loading, error }
 }
 
 export default useGetEntityById
