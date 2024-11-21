@@ -15,7 +15,7 @@ export const Card = ({ title, subtitle, onClick }: CardProps) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       onClick={onClick}
-      className={styles.personCard}
+      className={styles.card}
     >
       <h3 className={styles.title}>{title}</h3>
       <p className={styles.subtitle}>Birth Year: {subtitle}</p>
