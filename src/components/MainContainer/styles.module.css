@@ -1,0 +1,6 @@
+.mainContainer {
+  box-sizing: border-box;
+  padding: 2rem;
+  text-align: center;
+  width: 100vw;
+}
