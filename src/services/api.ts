@@ -48,7 +48,10 @@ export const getEntities = async <T extends Entity>(
   }
 }
 
-export const getEntityById = async <T>(endpoint: string, id: string) => {
+export const getEntityById = async <T extends Entity>(
+  endpoint: string,
+  id: string
+) => {
   const response = await api.get<T>(`${endpoint}/${id}`)
   return { ...response, data: { ...response.data, id } }
 }
