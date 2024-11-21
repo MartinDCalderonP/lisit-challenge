@@ -51,7 +51,7 @@ const getEntities = async <T extends Person | Planet | Starship>(
   }
 }
 
-export const getPersons = (page = 1, search = '') =>
+export const getPeople = (page = 1, search = '') =>
   getEntities<Person>('/people/', page, search)
 
 export const getPlanets = (page = 1, search = '') =>
