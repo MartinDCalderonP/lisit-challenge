@@ -5,7 +5,7 @@ import { Person } from '../../types/api'
 import useGetEntities from '../../hooks/useGetEntities'
 import { isPersonArray } from '../../utils'
 import Loader from '../../components/Loader'
-import PersonCard from '../../components/PersonCard'
+import Card from '../../components/Card'
 import Pagination from '../../components/Pagination'
 import styles from './styles.module.css'
 
@@ -42,11 +42,11 @@ export const People = () => {
         <>
           <div className={styles.cardsContainer}>
             {people.map((person) => (
-              <PersonCard
+              <Card
                 key={person.url}
-                birthYear={person.birth_year}
-                name={person.name}
                 onClick={() => handlePersonClick(person)}
+                subtitle={`Birth Year: ${person.birth_year}`}
+                title={person.name}
               />
             ))}
           </div>
