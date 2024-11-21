@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Navigate } from 'react-router-dom'
+import Layout from './components/Layout'
 import Home from './pages/Home'
 import People from './pages/People'
 
@@ -43,7 +44,11 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         {routes.map((route) => (
-          <Route key={route.path} path={route.path} element={route.element} />
+          <Route
+            key={route.path}
+            path={route.path}
+            element={<Layout>{route.element}</Layout>}
+          />
         ))}
       </Routes>
     </BrowserRouter>
