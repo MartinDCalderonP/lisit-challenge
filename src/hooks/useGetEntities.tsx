@@ -25,7 +25,12 @@ const useGetEntities = ({
       try {
         const response = await getEntities(endpoint, page, search)
         setData(response.data.results)
-        setTotalPages(Math.ceil(response.data.count / 10))
+
+        if (search) {
+          setTotalPages(Math.ceil(response.data.results.length / 10))
+        } else {
+          setTotalPages(Math.ceil(response.data.count / 10))
+        }
       } catch (error) {
         console.error('Error fetching:', error)
         setError("Couldn't fetch data. Please try again later.")
