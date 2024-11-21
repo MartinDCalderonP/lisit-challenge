@@ -21,7 +21,7 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <div className={styles.container}>
       <nav className={styles.nav}>
-        <li className={styles.navLinks}>
+        <ul className={styles.navLinks}>
           {navItems.map(({ path, icon: Icon, label }) => (
             <Link
               key={path}
@@ -36,7 +36,7 @@ const Layout = ({ children }: LayoutProps) => {
               <span>{label}</span>
             </Link>
           ))}
-        </li>
+        </ul>
       </nav>
       <main className={styles.main}>
         <motion.div

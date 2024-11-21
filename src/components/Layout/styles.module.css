@@ -11,6 +11,9 @@
 
     .navLinks {
       display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
 
       @media (max-width: 370px) {
         align-items: center;
@@ -20,7 +23,7 @@
       .navLink {
         display: flex;
         align-items: center;
-        padding: 0.75rem 1rem;
+        padding: 1.25rem 1rem;
         font-size: 0.875rem;
         font-weight: medium;
         color: #d1d5db;
