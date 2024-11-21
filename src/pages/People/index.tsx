@@ -13,7 +13,7 @@ export const People = () => {
   const navigate = useNavigate()
 
   const handlePersonClick = (person: Person) =>
-    navigate(`/people/${person.id || extractId(person.url)}`)
+    navigate(`/people/${person.id ?? extractId(person.url)}`)
 
   const [page, setPage] = useState(1)
 
