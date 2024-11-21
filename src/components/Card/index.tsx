@@ -18,7 +18,7 @@ export const Card = ({ title, subtitle, onClick }: CardProps) => {
       className={styles.card}
     >
       <h3 className={styles.title}>{title}</h3>
-      <p className={styles.subtitle}>Birth Year: {subtitle}</p>
+      <p className={styles.subtitle}>{subtitle}</p>
     </motion.div>
   )
 }
