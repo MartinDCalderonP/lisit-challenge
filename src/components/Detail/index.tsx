@@ -5,6 +5,7 @@ import Loader from '../Loader'
 import { isPersonItem, isPlanetItem, isStarshipItem } from '../../utils'
 import PersonDetail from './PersonDetail'
 import styles from './styles.module.css'
+import PlanetDetail from './PlanetDetail'
 
 export const Detail = () => {
   const { pathname } = window.location
@@ -48,7 +49,12 @@ export const Detail = () => {
                 handleSectionButtonClick={handleSectionButtonClick}
               />
             )}
-            {isPlanetItem(result) && <div>is Planet</div>}
+            {isPlanetItem(result) && (
+              <PlanetDetail
+                planet={result}
+                handleSectionButtonClick={handleSectionButtonClick}
+              />
+            )}
             {isStarshipItem(result) && <div>is Starship</div>}
           </div>
         </>
